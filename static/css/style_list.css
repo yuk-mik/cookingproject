@@ -1,0 +1,68 @@
+.wrapper {
+  margin-top: 7em;
+    display: grid;
+    /* grid-template-columns: repeat(3, 1fr); */
+    grid-auto-rows: 25em;
+    grid-template-columns: repeat(auto-fill, 25em);
+    column-gap: 3em;
+    row-gap: 3em;
+  }
+
+.logout{
+    position: absolute;
+    right: 3em;
+    top: 7em;
+    color:#FCFDFE;
+}
+
+.title{
+  text-align: left; 
+  float: left;  
+  font-size: 1em;
+}
+
+.date{
+  text-align: right;
+  font-size: 1em;
+  
+}
+
+.subtitle_bar{
+  padding-right: 3em;
+  color:#739F3D;
+  
+  /* position: relative;相対位置 */
+  /* padding-left: 1em;アイコン分のスペース */
+  line-height: 4em;
+}
+
+
+
+
+.create_button{
+    position: fixed;
+    top: 13em;
+    right: 3em;
+}
+
+a.btn--circle {
+    width: 3em;
+    height: 3em;
+    padding: 0;
+    background: #739F3D;
+    border-radius: 50%;
+    -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
+    box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
+  }
+  
+a.btn--circle i {
+  font-size: 1em;
+  line-height: 3em;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  letter-spacing: 0;
+  color:#FCFDFE
+}
+a.btn--circle:hover i {
+  line-height: 2.7em;
+}

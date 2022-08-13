@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}cooking record{% endblock title %}
+
+{% block customcss %}
+<link href="{% static '/css/style_delete.css' %}" rel="stylesheet">
+{% endblock customcss %}
+
+{% block header %}
+{% endblock header %}
+
+
+
+{% block content %}
+<div class="subtitle_bar">
+<p class="h2_title">{{ object.title }}</p>
+<p class="h2_date">{{ object.date  | date:"Y/n/j" }}</p>
+</div>
+
+<h3 class="guide_text h3_title" style="text-align:center; padding-bottom: 1.5em; padding-top: 1.5em;">Are you sure you want to delete this record?</h3>
+
+
+<form action='' method='POST'>{% csrf_token %}
+<div style="text-align:center; display: block;">   
+        
+            <button type="submit" style="display: inline-block; margin-right: 1.5em;" class="btn btn--green btn--circle btn--circle-a btn--shadow">yes</button>
+        
+        
+            <a href="{% url 'detail' object.pk %}" style="display: inline-block; padding: 1.2em;" class="btn btn--green btn--circle btn--circle-a btn--shadow">no</a>
+  
+</div>    
+</form> 
+
+
+{% endblock content %}

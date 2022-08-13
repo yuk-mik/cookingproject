@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}cooking record{% endblock title %}
+{% block header %}
+<a  class="logout" href="{% url 'logout' %}" >logout here</a>
+{% endblock header %}
+
+
+
+{% block content %}
+
+{% block customcss %}
+<link href="{% static 'css/style_list.css' %}" rel="stylesheet">
+{% endblock customcss %}
+
+
+
+{% if user.is_authenticated %}
+<div class="wrapper" style="margin: 7em;">
+    {% for item in object_list %}
+    <div class="subtitle_bar" class="alert alert-success" role="alert">
+        <p class="title guide_text">{{ item.title }}</a></p>
+        <p class="date guide_text">{{ item.date  | date:"Y/n/j" }}</p>
+        {% if item.cookingimages_1 %}
+        <p style="margin:0 auto;"><a href="{% url 'detail' item.pk %}"><img src="{{ item.cookingimages_1.url }}" width=300 onerror='this.src="{% static 'images/carrot.jpg' %}"'/></a></p>
+        {% else %}
+        <p style="margin: auto;"> <a href="{% url 'detail' item.pk %}"><img style="margin: auto;"  src="{% static 'images/carrot.jpg' %}" width=300></a></p>
+        {% endif %}
+    </div>
+    {% endfor %}
+</div>
+    <p class="create_button"><a href="{% url 'create' %}" class="btn btn--circle btn--circle-c btn--shadow"><i class="fa-solid fa-plus"></i></a></p>
+    
+
+{% else %}
+
+please login
+
+{% endif %}
+
+{% endblock content %}

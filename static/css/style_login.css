@@ -1,0 +1,34 @@
+.btn--green {
+    color: #FCFDFE;
+    background-color: #739F3D;
+    appearance: none;
+    display: block;
+    margin: auto;
+}
+
+.btn--green:hover {
+    color: #FCFDFE;
+    background-color: #598623;
+}
+
+.btn--shadow {
+    -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+}
+
+.btn--circle {
+    border-radius: 50%;
+    line-height: 4em;
+    width: 4em;
+    height: 4em;
+    padding: 0;
+}
+
+
+.signup{
+color: #EE693F
+}
+
+.login{
+color: #EE693F
+}

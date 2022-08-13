@@ -1,0 +1,67 @@
+html, body {
+    height: 100%;
+    background: #FCFDFE;
+    
+  }
+
+p {
+  white-space: pre-wrap;
+}
+
+h1{
+    /* font-size: */
+    color:#ffffff;
+    background-color:#EE693F;
+    /* position: relative;相対位置 */
+    /* padding-left: 1em;アイコン分のスペース */
+    line-height: 4em;
+    
+}
+
+.logo{
+    width: auto;
+    height: 2em;
+    padding-left: 1em;
+    padding-right: 1em;
+    margin : 0 auto;
+}
+
+.guide_text{
+    color:#739F3D;
+}
+
+.guide_orange{
+    color:#EE693F;
+}
+
+.content{
+  width:20em; 
+  margin:0 auto;
+}
+
+.btn,
+a.btn,
+button.btn {
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.5;
+  position: relative;
+  /* display: inline-block; */
+  padding: 1rem 1rem;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  /* border-radius: 0.5rem; */
+}
+
+#example{
+  margin: auto;
+}

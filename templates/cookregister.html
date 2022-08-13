@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block customcss %}
+<link href="{% static '/css/style_login.css' %}" rel="stylesheet">
+{% endblock customcss %}
+
+{% block title %}cooking record signup{% endblock title %}
+
+{% block header %}
+<head>
+    
+    
+</head>
+{% endblock header %}
+
+{% block content %}
+<body>
+<h2 class="h3 mb-3 font-weight-normal guide_text" style="text-align:center; margin-top: 4em;">please sign up</h2>
+
+ {% if AccountCreate %}
+  <p class="guide_text text-center" style="margin-top: 2em;">successfully signed up</p>
+  <p class="text-center" style="margin-top: 2em;"><a href="{% url 'login' %}" class="guide_orange">log in</a></p>
+  
+   
+ {% else %}
+  <div style="text-align: center; margin: auto; margin-top: 6em;" class="form"  style="padding-top: 3em;">
+  <table style="text-align: center; margin: auto;" class="reg_form" >
+    <tr>
+      <td></td><td></td>
+    </tr>
+    <form enctype="multipart/form-data" method="post" id="form">
+    {% csrf_token %}
+    {{ account_form.as_table}}
+    {{ add_account_form.as_table }}
+    
+    </form>
+  </table>
+  <div style="padding-top: 4em;">
+    <button type="submit" form="form" class="btn btn--green btn--circle btn--circle-a btn--shadow">go</button>
+  </div>
+  
+  </div>
+  <p class="text-center" style="padding-top: 4em;"><a class="login" href="{% url 'login' %}" >login here</a></p>
+  <p class="mt-5 mb-3 text-muted text-center">&copy; 2022</p>
+ {% endif %}
+</body>
+ 
+
+ {% endblock content %}

@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load widget_tweaks %}
+
+{% block header %}
+{% endblock header %}
+
+{% block customcss %}
+<link href="{% static 'css/style_edit.css' %}" rel="stylesheet">
+{% endblock customcss %}
+
+{% block content %}
+
+<div class="subtitle_bar">
+    
+    edit record
+    
+</div>
+
+
+<form style="text-align:center;" method='POST' enctype="multipart/form-data">{% csrf_token %}
+    <div style="">
+        <p class="guide_text para">title  {{ form.title }}</p>
+        <p class="guide_text para">date  {{ object.date | date:"Y/n/j" }}</p>
+        <p class="guide_text para">image 1   {{ form.cookingimages_1 }}</p>
+        <p class="guide_text para">image 2   {{ form.cookingimages_2 }}</p>
+        <p class="guide_text para">image 3   {{ form.cookingimages_3 }}</p>
+        <p class="guide_text para">ingredients  {{ form.ingredients }}</p>
+        <p class="guide_text para">recepi  {{ form.recepi }}</p>
+        <p class="guide_text para">memo  {{ form.memo }}</p>
+        <input type ='hidden' name='editor' value="{{ user.username }}"></p>
+        <!-- {{ form.as_p }} -->
+    </div>
+
+
+    <div style="text-align:center; display: block; padding: 3em">   
+            
+        <button type="submit" style="display: inline-block; margin-right: 1.5em;" class="btn btn--green btn--circle btn--circle-a btn--shadow">ok</button>
+        
+
+        <a href="{% url 'detail' object.pk %}" style="display: inline-block; padding-top:1.2em" class="btn btn--green btn--circle btn--circle-a btn--shadow">back</a>
+
+    </div>    
+
+</form>
+{% endblock content %}

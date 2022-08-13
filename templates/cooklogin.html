@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block customcss %}
+<link href="{% static '/css/style_login.css' %}" rel="stylesheet">
+{% endblock customcss %}
+
+{% block title %}cooking record login{% endblock title %}
+
+{% block header %}
+<head>
+    
+    
+</head>
+{% endblock header %}
+
+{% block content %}
+<body>
+    <h2 class="h3 mb-3 font-weight-normal guide_text" style="text-align:center; margin-top: 4em;"">please log in</h2>
+    <form class="form-login", method = "POST" style="margin: auto; width: 30em;padding-top: 3em;">{% csrf_token %}
+    
+    {{ message }}
+    <label for="inputEmail" class="sr-only">userID</label>
+    <input type="text" id="inputEmail" class="form-control" placeholder="userID" name = 'userID' required autofocus>
+    <label for="inputPassword" class="sr-only">Password</label>
+    <input type="password" id="inputPassword" class="form-control" placeholder="password" name = 'password' required>
+    
+    <!-- ボタンがうまくできん -->
+    <div style="padding-top: 4em;">
+        <button type="submit" style="margin: auto;" class="btn btn--green btn--circle btn--circle-a btn--shadow">go</button>
+    </div>
+    
+    </form>
+
+    <p class="text-center" style="padding-top: 4em;"><a class="signup" href="{% url 'registration' %}" >signup here</a></p>
+
+    <p class="mt-5 mb-3 text-muted text-center">&copy; 2022</p>
+</body>
+{% endblock content %}
